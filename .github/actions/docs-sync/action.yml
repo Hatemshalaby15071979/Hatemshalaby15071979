@@ -1,0 +1,97 @@
+name: "Docs Sync"
+description: >
+  Refreshes the visitor-facing status block (version, release date, tests,
+  coverage, CI state) in a repository's README.md and index.html when a release
+  is published. Never invents numbers: facts come from the release event and the
+  checks API; test/coverage come from the repo's _docs_profile.json. Opens a PR
+  for human review instead of pushing straight to the default branch.
+
+inputs:
+  profile:
+    description: Path (relative to the calling repo root) of the docs profile JSON.
+    required: false
+    default: "_docs_profile.json"
+  token:
+    description: GitHub token used to open the PR and read check status.
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout the released code
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.release.tag_name }}
+        fetch-depth: 0
+
+    - name: Set up Python (for the renderer)
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Gather proven facts
+      id: facts
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+        REPO: ${{ github.repository }}
+        SHA: ${{ github.sha }}
+      run: |
+        VERSION="${{ github.event.release.tag_name }}"
+        PUBLISHED="${{ github.event.release.published_at }}"
+
+        # CI state of the release commit — never publish status unless green.
+        STATE=$(gh api "repos/${REPO}/commits/${SHA}/status" \
+          --jq '.state' 2>/dev/null || echo "unknown")
+        echo "ci_state=${STATE}" >> "$GITHUB_OUTPUT"
+        echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+        echo "published=${PUBLISHED}" >> "$GITHUB_OUTPUT"
+        echo "CI state for ${SHA}: ${STATE}"
+
+    - name: Refresh the status block
+      id: render
+      shell: bash
+      env:
+        REPO_DIR: ${{ github.workspace }}
+        PROFILE: ${{ inputs.profile }}
+        VERSION: ${{ steps.facts.outputs.version }}
+        PUBLISHED: ${{ steps.facts.outputs.published }}
+        CI_STATE: ${{ steps.facts.outputs.ci_state }}
+        SCRIPT: ${{ github.action_path }}/render_docs.py
+      run: |
+        ARGS=(--repo-dir "$REPO_DIR" --profile "$PROFILE" \
+              --version "$VERSION" --release-date "$PUBLISHED" \
+              --ci-status "$CI_STATE" --write)
+        python "$SCRIPT" "${ARGS[@]}"
+        # Detect whether anything actually changed.
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "changed=false" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Open a PR with the refreshed docs
+      if: steps.render.outputs.changed == 'true'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+        VERSION: ${{ steps.facts.outputs.version }}
+      run: |
+        BRANCH="docs/auto-sync-${VERSION}"
+        git config user.name "docs-sync[bot]"
+        git config user.email "docs-sync@users.noreply.github.com"
+        git checkout -b "$BRANCH"
+        git add -A
+        git commit -m "docs: sync status to ${VERSION}"
+        git push --force-with-lease origin "$BRANCH"
+        gh pr create \
+          --head "$BRANCH" \
+          --title "docs: sync status to ${VERSION}" \
+          --body "Automated by the docs-sync engine. The release **${VERSION}** shipped, so the visitor-facing status block (version, date, tests, coverage, CI) was refreshed from proven facts.
+
+        - Version: ${VERSION}
+        - CI state of the release commit: ${{ steps.facts.outputs.ci_state }}
+
+        Review the diff — the engine only touches the \`<!-- docs-sync:start -->\` block; all hand-authored prose is untouched." || \
+        echo "PR already open or creation skipped."
