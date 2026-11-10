@@ -19,6 +19,12 @@
 
 </div>
 
+## Status
+
+<!-- docs-sync:start -->
+**Portfolio — the front door to Hatem Shalaby's governed, offline-first AI tooling.** This repository also hosts the cross-repo `docs-sync` engine: when any of the listed projects ships a release, the engine refreshes that project's visitor-facing status block automatically and opens a pull request for review. No product release is published from this repository itself.
+<!-- docs-sync:end -->
+
 ## About
 
 **Hatem Shalaby** — Contact Centre Operations & AI Implementation Lead, specialising in WFM (Workforce Management) and CX (Customer Experience) transformation. I build governed, local-first decision systems that answer operational questions with evidence rather than adjectives — signed audit trails, deterministic confidence gates, and reproducible reconciliation — with no generative model in the execution path.
