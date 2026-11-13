@@ -1,0 +1,13 @@
+{
+  "name": "Portfolio",
+  "repo": "Hatemshalaby15071979/Hatemshalaby15071979",
+  "status_template": "**Portfolio — the front door to Hatem Shalaby's governed, offline-first AI tooling.** This repository also hosts the cross-repo `docs-sync` engine: when any of the listed projects ships a release, the engine refreshes that project's visitor-facing status block automatically and opens a pull request for review. No product release is published from this repository itself.",
+  "status_template_html": "<p class=\"status\"><strong>Portfolio — the front door to Hatem Shalaby's governed, offline-first AI tooling.</strong> This repository also hosts the cross-repo <code>docs-sync</code> engine: when any of the listed projects ships a release, the engine refreshes that project's visitor-facing status block automatically and opens a pull request for review. No product release is published from this repository itself.</p>",
+  "facts": {
+    "version": "",
+    "release_date": "",
+    "tests_passed": null,
+    "coverage": null,
+    "ci_label": "No product release is published from this repository itself"
+  }
+}
