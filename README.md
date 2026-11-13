@@ -35,7 +35,7 @@ I build tools that answer operational questions with **evidence, not adjectives*
 
 | Project | Purpose | Status | Repo |
 |---|---|---|---|
-| **Signoff** | Offline evidence-pack builder: AI questionnaire → signed dossier (HTML/PDF/JSON/CSV) with gap list and Oversight Statement | v0.1.0, locally shipment-ready | [Hatemshalaby15071979/Sign-off](https://github.com/Hatemshalaby15071979/Sign-off) |
+| **Signoff** | Offline evidence-pack builder: AI questionnaire → signed dossier (HTML/PDF/JSON/CSV) with gap list and Oversight Statement | v0.1.0, locally verified (not shipment-ready) | [Hatemshalaby15071979/Sign-off](https://github.com/Hatemshalaby15071979/Sign-off) |
 | **Helix-Codex** (Helix-Prime) | Governed local-first operations core: identity/RBAC, Erlang C forecasting, CRM, workflow engine, fail-closed gate | Simulated production, production gates red by design | [Hatemshalaby15071979/Helix-Codex](https://github.com/Hatemshalaby15071979/Helix-Codex) |
 | **live-support-assistant** | Explainable browser support prototype: on-device retrieval + deterministic confidence gate, escalates instead of guessing | Prototype, shadow-mode pilot | [Hatemshalaby15071979/live-support-assistant](https://github.com/Hatemshalaby15071979/live-support-assistant) |
 | **CompliProof** | Local two-CSV reconciliation engine with HTML/PDF/CSV reports, hash-chained audit events, role-based access | Pre-production candidate, 7 P0 open | [Hatemshalaby15071979/CompliProof](https://github.com/Hatemshalaby15071979/CompliProof) |
