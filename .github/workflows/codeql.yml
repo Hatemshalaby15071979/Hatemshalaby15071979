@@ -1,0 +1,44 @@
+name: CodeQL
+
+# Free code scanning via GitHub CodeQL. Runs on PRs and a weekly cron.
+# This profile repository currently contains only markdown/README content, so
+# CodeQL has no compiled code to analyze; the job is kept for completeness and
+# will automatically pick up any source code added later.
+on:
+  pull_request:
+    branches: ["**"]
+  schedule:
+    - cron: "11 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyze (CodeQL)
+    runs-on: ubuntu-latest
+    # `security-events: write` is required only for the upload step.
+    permissions:
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["python"]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@b7b84b636b4f90c9b31da1bc5f72bfadd5b31410 # v3
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: none
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@b7b84b636b4f90c9b31da1bc5f72bfadd5b31410 # v3
+        with:
+          category: "/language:${{ matrix.language }}"

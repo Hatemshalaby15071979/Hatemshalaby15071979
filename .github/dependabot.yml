@@ -1,0 +1,14 @@
+version: 2
+
+# Free workflow maintenance. No paid GitHub add-ons used.
+# This profile repository contains only documentation (README), so the only
+# ecosystem to keep current is the GitHub Actions used by this repo's workflows.
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      actions-minor-patch:
+        applies-to: "version-updates"
+        update-types: ["minor", "patch"]
