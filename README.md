@@ -14,9 +14,9 @@
 
 <!-- badges:end -->
 
-**A portfolio of governed, offline-first, explainable AI tooling for contact-centre and back-office operations.**
+**Governed, offline-first, explainable AI tooling for contact-centre and back-office operations.**
 
-![projects](https://img.shields.io/badge/projects-5-blue)
+![projects](https://img.shields.io/badge/projects-13-blue)
 ![licence](https://img.shields.io/badge/licence-MIT-blue)
 
 </div>
@@ -24,24 +24,34 @@
 ## Status
 
 <!-- docs-sync:start -->
-**Portfolio — the front door to Hatem Shalaby's governed, offline-first AI tooling.** This repository also hosts the cross-repo `docs-sync` engine: when any of the listed projects ships a release, the engine refreshes that project's visitor-facing status block automatically and opens a pull request for review. No product release is published from this repository itself.
+**Portfolio — the front door to Hatem Shalaby's governed, offline-first AI tooling.** Every repository on this account carries the same operating principles: evidence before claims, offline by default, a human always in the loop, and honesty about limits. No product release is published from this repository itself.
 <!-- docs-sync:end -->
 
 ## About
 
-**Hatem Shalaby** — Contact Centre Operations & AI Implementation Lead, specialising in WFM (Workforce Management) and CX (Customer Experience) transformation.
+**Hatem Shalaby** — Contact Centre Operations and AI Implementation Lead, focused on WFM and CX transformation.
 
 I build tools that answer operational questions with **evidence, not adjectives**: every answer points to a record you can check, nothing important runs without a human approving it, and everything works locally — no cloud required, no data leaving the machine.
+
+> Code is open. Data stays with you. A human is always in charge.
 
 ## Portfolio
 
 | Project | Purpose | Status | Repo |
 |---|---|---|---|
-| **Signoff** | Offline evidence-pack builder: AI questionnaire → signed dossier (HTML/PDF/JSON/CSV) with gap list and Oversight Statement | v0.1.0, locally verified (not shipment-ready) | [Hatemshalaby15071979/Sign-off](https://github.com/Hatemshalaby15071979/Sign-off) |
-| **Helix-Codex** (Helix-Prime) | Governed local-first operations core: identity/RBAC, Erlang C forecasting, CRM, workflow engine, fail-closed gate | Simulated production, production gates red by design | [Hatemshalaby15071979/Helix-Codex](https://github.com/Hatemshalaby15071979/Helix-Codex) |
-| **live-support-assistant** | Explainable browser support prototype: on-device retrieval + deterministic confidence gate, escalates instead of guessing | Prototype, shadow-mode pilot | [Hatemshalaby15071979/live-support-assistant](https://github.com/Hatemshalaby15071979/live-support-assistant) |
-| **CompliProof** | Local two-CSV reconciliation engine with HTML/PDF/CSV reports, hash-chained audit events, role-based access | Pre-production candidate, 7 P0 open | [Hatemshalaby15071979/CompliProof](https://github.com/Hatemshalaby15071979/CompliProof) |
-| **CreateLee** | Synthetic rehearsal library for the Signoff evidence gate: export-shaped CSVs, CSV validator, golden examples | Fixtures, rehearsal only | [Hatemshalaby15071979/createlee](https://github.com/Hatemshalaby15071979/createlee) |
+| **Helix-Codex** (Helix-Prime) | Governed local-first operations core: six engines, nine AI roles, fail-closed gate by design | Simulated production, production gates red by design | [Hatemshalaby15071979/Helix-Codex](https://github.com/Hatemshalaby15071979/Helix-Codex) |
+| **Sign-off** | Signed, offline evidence packs answering how AI touched a customer's records | v0.1.0, locally verified (not shipment-ready) | [Hatemshalaby15071979/Sign-off](https://github.com/Hatemshalaby15071979/Sign-off) |
+| **Assay** | Offline sheet checks with a hash-chained report pack and a named human for every judgement call | 0.4.0, pre-release candidate | [Hatemshalaby15071979/Assay](https://github.com/Hatemshalaby15071979/Assay) |
+| **Mannschaft** | Listening-first German learning for A1–C2, local only, built for one learner | V6, 12 lessons, local release | [Hatemshalaby15071979/Mannschaft](https://github.com/Hatemshalaby15071979/Mannschaft) |
+| **CompliProof** | Reconciles two CSV exports by key into an HTML/PDF/CSV evidence pack, hash-chained audit | Pre-production candidate, 7 P0 open | [Hatemshalaby15071979/CompliProof](https://github.com/Hatemshalaby15071979/CompliProof) |
+| **createlee** | Synthetic Signoff-shaped fixtures to rehearse the evidence gate before client data | Fixtures, rehearsal only | [Hatemshalaby15071979/createlee](https://github.com/Hatemshalaby15071979/createlee) |
+| **live-support-assistant** | Explainable local RAG prototype that escalates instead of guessing | Prototype, shadow-mode pilot | [Hatemshalaby15071979/live-support-assistant](https://github.com/Hatemshalaby15071979/live-support-assistant) |
+| **Study-Studio** | Private local-first AI tutor: lessons, quizzes, glossaries and bilingual podcasts | Development | [Hatemshalaby15071979/Study-Studio](https://github.com/Hatemshalaby15071979/Study-Studio) |
+| **Helix-Education** | Event-sourced learning engine with a replayable, sealed learner record | Development | [Hatemshalaby15071979/Helix-Education](https://github.com/Hatemshalaby15071979/Helix-Education) |
+| **L-D-Command-Center** | Desktop learning and career workstation that runs on your laptop | Development | [Hatemshalaby15071979/L-D-Command-Center](https://github.com/Hatemshalaby15071979/L-D-Command-Center) |
+| **SigmaHelix-OS** | A personal operating system on your own machine — tasks, notes, projects and calendar | Development | [Hatemshalaby15071979/SigmaHelix-OS](https://github.com/Hatemshalaby15071979/SigmaHelix-OS) |
+| **work-samples** | Three self-contained exercises demonstrating the operations-to-software mapping | Static | [Hatemshalaby15071979/work-samples](https://github.com/Hatemshalaby15071979/work-samples) |
+| **Helix-Solutions** | The master website and brand hub — canonical logo, films, and public index | Live on GitHub Pages | [Hatemshalaby15071979/Helix-Solutions](https://github.com/Hatemshalaby15071979/Helix-Solutions) |
 
 ## Design philosophy
 
