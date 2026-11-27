@@ -16,7 +16,7 @@
 
 **Governed, offline-first, explainable AI tooling for contact-centre and back-office operations.**
 
-![projects](https://img.shields.io/badge/projects-13-blue)
+![projects](https://img.shields.io/badge/projects-15-blue)
 ![licence](https://img.shields.io/badge/licence-MIT-blue)
 
 </div>
@@ -44,7 +44,7 @@ I build tools that answer operational questions with **evidence, not adjectives*
 | **Assay** | Offline sheet checks with a hash-chained report pack and a named human for every judgement call | 0.4.0, pre-release candidate | [Hatemshalaby15071979/Assay](https://github.com/Hatemshalaby15071979/Assay) |
 | **Mannschaft** | Listening-first German learning for A1–C2, local only, built for one learner | V6, 12 lessons, local release | [Hatemshalaby15071979/Mannschaft](https://github.com/Hatemshalaby15071979/Mannschaft) |
 | **CompliProof** | Reconciles two CSV exports by key into an HTML/PDF/CSV evidence pack, hash-chained audit | Pre-production candidate, 7 P0 open | [Hatemshalaby15071979/CompliProof](https://github.com/Hatemshalaby15071979/CompliProof) |
-| **createlee** | Synthetic Signoff-shaped fixtures to rehearse the evidence gate before client data | Fixtures, rehearsal only | [Hatemshalaby15071979/createlee](https://github.com/Hatemshalaby15071979/createlee) |
+| **createlee** | Synthetic Sign-off-shaped fixtures to rehearse the evidence gate before client data | Fixtures, rehearsal only | [Hatemshalaby15071979/createlee](https://github.com/Hatemshalaby15071979/createlee) |
 | **live-support-assistant** | Explainable local RAG prototype that escalates instead of guessing | Prototype, shadow-mode pilot | [Hatemshalaby15071979/live-support-assistant](https://github.com/Hatemshalaby15071979/live-support-assistant) |
 | **Study-Studio** | Private local-first AI tutor: lessons, quizzes, glossaries and bilingual podcasts | Development | [Hatemshalaby15071979/Study-Studio](https://github.com/Hatemshalaby15071979/Study-Studio) |
 | **Helix-Education** | Event-sourced learning engine with a replayable, sealed learner record | Development | [Hatemshalaby15071979/Helix-Education](https://github.com/Hatemshalaby15071979/Helix-Education) |
@@ -52,6 +52,8 @@ I build tools that answer operational questions with **evidence, not adjectives*
 | **SigmaHelix-OS** | A personal operating system on your own machine — tasks, notes, projects and calendar | Development | [Hatemshalaby15071979/SigmaHelix-OS](https://github.com/Hatemshalaby15071979/SigmaHelix-OS) |
 | **work-samples** | Three self-contained exercises demonstrating the operations-to-software mapping | Static | [Hatemshalaby15071979/work-samples](https://github.com/Hatemshalaby15071979/work-samples) |
 | **Helix-Solutions** | The master website and brand hub — canonical logo, films, and public index | Live on GitHub Pages | [Hatemshalaby15071979/Helix-Solutions](https://github.com/Hatemshalaby15071979/Helix-Solutions) |
+| **n8n-production-starter** | Hardened self-hosted n8n + PostgreSQL + optional local model, with backups proven by restore | Working locally; external TLS/tunnel and scan evidence outstanding | [Hatemshalaby15071979/n8n-production-starter](https://github.com/Hatemshalaby15071979/n8n-production-starter) |
+| **Helix-Matrix** | Standalone day-OS reference matrix mapping floor symptoms to governed systems, with a 24-lesson path | v1.0.0, loopback-only, 28 tests | [Hatemshalaby15071979/Helix-Matrix](https://github.com/Hatemshalaby15071979/Helix-Matrix) |
 
 ## Design philosophy
 
@@ -61,6 +63,16 @@ Every project in this portfolio shares the same operating principles:
 2. **Offline by default.** Tools run on the customer's own machine, make no network calls in the evidence path, hold no credentials, and touch no production systems.
 3. **Human in the loop.** Nothing is saved, sent, or executed before explicit human approval. The machine never auto-signs, never paraphrases an answer, and never classifies a system as high-risk.
 4. **Honest about limits.** Synthetic fixtures are labelled `simulated`; production gates remain red until external evidence (signed packs, certified isolation, external audit, legal/privacy review) is supplied.
+
+## How this was built
+
+These repositories are AI-assisted, and the `AGENTS.md` files in each one say so. The division of labour, stated plainly:
+
+- **Designed and decided by the owner.** Hatem Shalaby designed the systems — the engine architecture, the governance and fail-closed gate model, the role seats, and the evidence standard — and he made every public-number decision. The operational judgment that the design is built on (28 years on contact-centre and aviation floors) is his own.
+- **Implemented with AI coding agents.** Day-to-day implementation, test authoring, and documentation were carried out by large language models in CLI coding assistants (Claude-family agents, Codex/CodeBuddy, and OpenMausBot multi-agent setups that also drive the ledger, CI, and cross-repo governance). The agents write the code; they do not write the claims.
+- **Verified by the owner and by the repo itself.** Every number a README publishes is reproducible from the repository: a test suite with a pinned command, dated evidence packs, and CI runs. Where a number cannot be reproduced, the README says so and drops it.
+
+An AI-assisted repo is not a defect to hide; it is the working method. What stays human is responsibility: the owner reviews, directs, and stands behind every claim in these files.
 
 ## Contact
 

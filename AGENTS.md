@@ -97,3 +97,17 @@ Verification: `python3 scripts/check_root_docs.py` → "OK -- Hatemshalaby150719
 Left undone: Nothing failing. CI on this landing and the sign-out commit is the record of the same steps on a clean runner.
 
 Sensitive: `git push origin master` (owner's instruction in chat, 2026-11-27). No force push, no history rewrite — other repositories pin the shared action to this branch. No secrets.
+
+## [2026-11-27 06:56 EET] — sami (OpenMausBot), owner-authorised resume/portfolio consistency pass
+
+STATUS: SIGN-IN (work in progress)
+
+Task: Owner instruction (2026-11-27 pasted audit note): align the portfolio front door with the resume. Add the two missing public repos (n8n-production-starter, Helix-Matrix) to the project table and its count badge; add a "How this was built" section that names the AI-assisted process honestly; standardise the Signoff→Sign-off spelling used in this table.
+
+Touched: `README.md` (table rows + `projects` badge + new "How this was built" section). No code, no shared action, no history rewrite.
+
+Why: The owner is applying for a role; a reviewer will reconcile the resume against the portfolio. Every resume project must resolve to a public repo, and the AI-assisted history must be stated by us, not discovered by a reviewer.
+
+Verification: Local `python3 scripts/check_root_docs.py` still passes (no root `.md/.txt` added); table count matches the account's public repos; badge number updated to match the table.
+
+Sensitive: `git push origin master` (owner's pasted instruction, 2026-11-27). No force push, no history rewrite, no secrets.
