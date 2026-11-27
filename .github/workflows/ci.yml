@@ -21,7 +21,7 @@ jobs:
     name: root-document hygiene
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # GOVERNANCE.md section 2: the root holds only the documented set. The gate parses
       # that table out of GOVERNANCE.md, asserts both directions (every named document is
       # present, and no unlisted .md/.txt sits at the root), and self-tests that it fails
