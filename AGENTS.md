@@ -111,3 +111,23 @@ Why: The owner is applying for a role; a reviewer will reconcile the resume agai
 Verification: Local `python3 scripts/check_root_docs.py` still passes (no root `.md/.txt` added); table count matches the account's public repos; badge number updated to match the table.
 
 Sensitive: `git push origin master` (owner's pasted instruction, 2026-11-27). No force push, no history rewrite, no secrets.
+
+## [2026-11-27 07:58 EET] — sami (OpenMausBot), owner-authorised resume/portfolio consistency pass
+STATUS: SIGN-OUT (landing complete)
+
+Task: Same as the 06:56 sign-in. Done: table rows + count badge, "How this was built"
+section, Signoff→Sign-off spelling, Helix-Matrix row correction (v1.0.0 shipped 2026-11-26,
+loopback-only, 28 tests — the "static" status was wrong against the repo's own README).
+
+Touched: `README.md` (the three changes above); `AGENTS.md` (sign-in back-fill and this sign-out).
+No code, no shared action, no history rewrite.
+
+Verification: `python3 scripts/check_root_docs.py` passed before and after (no root document
+added or removed); pushed as `7cdc47c` on `master`; CI on that push is the record of the gate
+running on a clean runner. Table count (15) matches the two new public repos plus the 13 the
+badge already named.
+
+Left undone: nothing failing.
+
+Sensitive: `git push origin master` (owner's instruction, 2026-11-27). No force push, no history
+rewrite, no secrets.
