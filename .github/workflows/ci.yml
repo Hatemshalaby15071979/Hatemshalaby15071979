@@ -1,0 +1,32 @@
+name: CI
+
+# CI for the portfolio index. This repository has no application code: it carries the
+# profile README, the portfolio index and the shared docs-sync action. The gate that
+# makes sense here is the root-document rule from GOVERNANCE.md section 2.
+#
+# Branch policy: the default branch is `master`. Other repositories reference the
+# shared action as `.github/actions/docs-sync@master`, so this workflow never rewrites
+# history and this branch name is not to be changed casually.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  governance:
+    name: root-document hygiene
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # GOVERNANCE.md section 2: the root holds only the documented set. The gate parses
+      # that table out of GOVERNANCE.md, asserts both directions (every named document is
+      # present, and no unlisted .md/.txt sits at the root), and self-tests that it fails
+      # closed. It needs nothing but python3 and a checkout.
+      - name: Root-document hygiene (GOVERNANCE.md section 2)
+        run: |
+          python3 scripts/check_root_docs.py
+          python3 scripts/check_root_docs.py --self-test
