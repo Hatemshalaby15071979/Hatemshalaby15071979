@@ -10,7 +10,7 @@
 ![linkedin](https://img.shields.io/badge/LinkedIn-Hatem%20Shalaby-0077b5)
 ![location](https://img.shields.io/badge/location-Egypt-green)
 
-*Contact Centre Operations & AI Implementation Lead | WFM & CX Transformation*
+*Operations Leadership | Contact Centre Operations | Customer Experience Transformation | Process & AI Enablement*
 
 <!-- badges:end -->
 
