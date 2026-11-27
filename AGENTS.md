@@ -81,3 +81,19 @@ Verification: Planned — `python3 scripts/check_root_docs.py` and `--self-test`
 Left undone: Nothing at sign-in.
 
 Sensitive: `git push origin master` (owner's instruction in chat, 2026-11-27). No force push, no history rewrite — other repositories pin the shared action to this branch. No secrets.
+
+## [2026-11-27 05:29 EET] — sami (OpenMausBot), owner-authorised governance landing
+
+STATUS: SIGN-OUT (landing complete)
+
+Task: Bring this repository onto the portfolio governance standard, as the owner approved in chat on 2026-11-27. Done.
+
+Touched: `AGENTS.md`, `CHANGELOG.md`, `CONSTITUTION.md`, `GOVERNANCE.md`, `LICENSE` (all new); `scripts/check_root_docs.py` (new, md5 `35fc37ab16ff4461a33d4e2dcaedb7bf`, byte-identical to the copy in Assay, createlee, Helix-Solutions, Helix-Matrix, Helix-Codex and the six repositories landed earlier today); `.github/workflows/ci.yml` (new, one `governance` job). Nothing moved, renamed or deleted. `.github/actions/docs-sync/` (`action.yml`, `render_docs.py`) was deliberately not touched: fourteen-plus repositories pin it as `Hatemshalaby15071979/Hatemshalaby15071979/.github/actions/docs-sync@master`, so a change there lands everywhere at the next release with no staging step.
+
+Why: This repository held the profile README, the portfolio index and the shared docs-sync action every other repository calls — but no charter, no constitution, no written policy, no changelog, no licence file and no CI of its own. It is infrastructure; it now carries the same standard as what depends on it. `GOVERNANCE.md` section 1 records the shared-action hazard in writing for the first time.
+
+Verification: `python3 scripts/check_root_docs.py` → "OK -- Hatemshalaby15071979/ holds only the GOVERNANCE.md section 2 set" (7 table rows, 7 allowed root documents; `_docs_profile.json` and `index.html` are not `.md`/`.txt`, so the gate correctly ignores them). `--self-test` → 7/7 cases behaved: a planted `STRAY-NOTE.md` and a planted `NOTES.txt` each stop the gate, a missing required document stops it, a package manifest at the root is acknowledged as a non-document, a stray under `docs/` is ignored, and a section 2 with no parsable table fails closed. `.github/workflows/ci.yml` parses as valid YAML with one job `governance` on `ubuntu-latest`, two steps. `README.md` already carries the Helix Solutions logo and needed no change. Note for the next agent: the default branch here is `master`, not `main` — that is load-bearing, because the shared action is referenced with `@master`.
+
+Left undone: Nothing failing. CI on this landing and the sign-out commit is the record of the same steps on a clean runner.
+
+Sensitive: `git push origin master` (owner's instruction in chat, 2026-11-27). No force push, no history rewrite — other repositories pin the shared action to this branch. No secrets.
