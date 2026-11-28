@@ -10,7 +10,7 @@
 ![linkedin](https://img.shields.io/badge/LinkedIn-Hatem%20Shalaby-0077b5)
 ![location](https://img.shields.io/badge/location-Egypt-green)
 
-*Customer Operations & Service Delivery Leader | Onboarding, Workforce Management, Process Excellence & AI Enablement,*
+*AI Systems Architect | Operations Transformation Leader | Builder of Governed AI Systems,*
 *AI Systems Architect who combines operational leadership, software architecture, learning systems, and AI into complete business solutions*
 
 <!-- badges:end -->
